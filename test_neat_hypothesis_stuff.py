@@ -19,6 +19,7 @@ def test_lists_can_have_a_lot_of_strings(str_list):
   for string in str_list:
     log.info(string)
 
+# Let's make an object...
 class Person(object):
   def __init__(self, name: str, age: int):
     self.name = name
@@ -27,7 +28,7 @@ class Person(object):
   def __str__(self):
     return "Hi, I'm {} and I'm {}.".format(self.name, self.age)
 
-# And create objects to use in our tests (remember, constructors are just callables too!)
+# And use it in our tests (remember, constructors are just callables too!)
 @given(builds(Person, text(), integers()))
 def test_create_person(a_person):
   log.info(a_person)
