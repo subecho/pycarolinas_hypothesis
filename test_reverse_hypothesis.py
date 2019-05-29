@@ -5,7 +5,7 @@ from hypothesis.strategies import text
 
 from reverse import reverse_string
 
-class TestReverse(unittest.TestCase):
+class TestReverseHypothesis(unittest.TestCase):
   @given(text())
   def test_reversing_reversed_string_gives_original(self, a_str):
     assert a_str == reverse_string(reverse_string(a_str))
