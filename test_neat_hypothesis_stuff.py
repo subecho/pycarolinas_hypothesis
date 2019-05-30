@@ -1,7 +1,7 @@
 import logging
 
 from hypothesis import given
-from hypothesis.strategies import builds, integers, lists, sampled_from, text
+from hypothesis.strategies import builds, characters, integers, lists, sampled_from, text
 
 log = logging.getLogger("log")
 
@@ -29,6 +29,6 @@ class Person(object):
     return "Hi, I'm {} and I'm {}.".format(self.name, self.age)
 
 # And use it in our tests (remember, constructors are just callables too!)
-@given(builds(Person, text(), integers()))
+@given(builds(Person, text(characters(min_codepoint=ord("A"), max_codepoint=ord("Z"))), integers()))
 def test_create_person(a_person):
   log.info(a_person)

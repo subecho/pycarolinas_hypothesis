@@ -3,5 +3,5 @@ def reverse_string(a_string: str):
   "olleh"."""
   reversed_string = ""
   for i in range(len(a_string)):
-    reversed_string += a_string[-i]
+    reversed_string += a_string[~i]
   return reversed_string
