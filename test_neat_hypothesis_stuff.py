@@ -7,7 +7,7 @@ log = logging.getLogger("log")
 
 # We can use the builds() strategy to get something from a callable and arguments
 @given(builds(iter, lists(integers())))
-def test_dictionary_construction(iterator):
+def test_iterator_construction(iterator):
   log.info("Starting Iteration")
   for item in iterator:
     log.info(item)
